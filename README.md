@@ -1,31 +1,33 @@
-# OPOWER Connection Pool Homework
+# Overview
 
-This is a very basic scaffold project for you to work in for the connection pool homework assignment
+This repository contains my (Joshua Mark Rutherford) response to the OPOWER Connection Pool Homework. This file now describes the assumptions, modifications and additions made during the completion of this homework assignment.  Lastly, instructions are provided for the compilation and test of my respsonse.
+
+## Assumptions
+
+As the only requirement explicitly defined within the homework assignment is the implementation of the ConnectionPool interface, I have made a number of assumptions as to the desired behaviour behind that interface.  As these assumptions have shaped my implementation, I am providing them here to facilitate the evaluation of my work.
+
+The solution should not rely upon any existing third party connection pool implementation.  This includes any implmentations that may be exposed through the javax.sql.DataSource interface.  As a result, I have chosen to utilize the legacy java.sql.DriverManager.  Refactoring the connection pool implementation to utilize the javax.sql.DataSource interface should be possible with very little effort.
+
+## Modifications
+
+The following modifications have been made to the existing files:
+
+pom.xml - Added a version element for the maven-compiler-plugin to remove maven warnings. 
+
+## Additions
+
+The following additions have been made:
+
+.gitignore - Added to the project to prevent the inclusion of platform, environment and build files.
 
 ## Instructions
 
-Please clone the repository and deliver your solution via an archive format of your choice, including all project files, within 1 calendar week.
+My project is hosted on [github][github]. Note that I have not included any environment specific files in my github repository but these can be provided on request.
 
-Write a connection pool class that implements this interface (it is also located in `src/main/java/com/opower/connectionpool/ConnectionPool.java`):
-
-    public interface ConnectionPool {
-        java.sql.Connection getConnection() throws java.sql.SQLException;
-        void releaseConnection(java.sql.Connection con) throws java.sql.SQLException;
-    }
-
-While we know there are many production-ready implementations of connection pools, this assignment allows for a variety of solutions to a real-world problem.  Your solution will be reviewed by the engineers you would be working with if you joined OPOWER.  We are interested in seeing your real-world design, coding, and testing skills.
-
-## Using this scaffold
-
-This scaffold is provided to help you (and us) build your homework code. 
-We've included a `pom.xml`, which is a file used by [maven][maven] to build the project and run other commands.   It also contains
-information on downloading dependent jars needed by your project.  This one contains JUnit, EasyMock and Log4J already, but feel free
-to change it as you see fit.
+As no significant changes to the pom.xml file have been made, the instructions for use of my solution have not changed.
 
     mvn compile      # compiles your code in src/main/java
     mvn test-compile # compile test code in src/test/java
     mvn test         # run tests in src/test/java for files named Test*.java
 
-
-[maven]:http://maven.apache.org/
-
+[github] https://github.com/roostergator/com.opower.connectionpool
