@@ -6,19 +6,26 @@ This repository contains my (Joshua Mark Rutherford) response to the OPOWER Conn
 
 As the only requirement explicitly defined within the homework assignment is the implementation of the ConnectionPool interface, I have made a number of assumptions as to the desired behaviour behind that interface.  As these assumptions have shaped my implementation, I am providing them here to facilitate the evaluation of my work.
 
-The solution should not rely upon any existing third party connection pool implementation.  This includes any implmentations that may be exposed through the javax.sql.DataSource interface.  As a result, I have chosen to utilize the legacy java.sql.DriverManager.  Refactoring the connection pool implementation to utilize the javax.sql.DataSource interface should be possible with very little effort.
+- The solution should not rely upon any existing third party connection or object implementations.
+- The solution should allow for the definition of a minimum number of connections to be maintained.
+- The solution should allow for the definition of a maximum number of connections to be maintained.
+- The solution should not allow consumers to physically close connections.
+- The solution should not allow consumers to retain unused connections indefinitely.
+- The solution should ensure that connections are valid prior to providing them to consumers.
 
 ## Modifications
 
 The following modifications have been made to the existing files:
 
 pom.xml - Added a version element for the maven-compiler-plugin to remove maven warnings. 
+README.md - Added solution specific information.
 
 ## Additions
 
 The following additions have been made:
 
 .gitignore - Added to the project to prevent the inclusion of platform, environment and build files.
+/src/main/java/com/opower/connectionpool/ConnectionPoolImpl.java - Contains all implementation specific code and classes.
 
 ## Instructions
 
