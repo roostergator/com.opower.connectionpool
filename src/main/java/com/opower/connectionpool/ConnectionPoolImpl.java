@@ -933,8 +933,10 @@ public class ConnectionPoolImpl implements ConnectionPool {
 			this.last = new AtomicLong(System.currentTimeMillis());
 			this.listeners = new EventListenerList();
 			this.timeout = timeout;
-			this.timer = new Timer(true);
-			this.timer.schedule(new TimeoutTask(), this.timeout);
+			if (this.timeout > 0) {
+				this.timer = new Timer(true);
+				this.timer.schedule(new TimeoutTask(), this.timeout);
+			}
 		}		
 		
 		/**
