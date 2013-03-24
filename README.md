@@ -6,19 +6,19 @@ This repository contains my (Joshua Mark Rutherford) response to the OPOWER Conn
 
 As the only requirement explicitly defined within the homework assignment is the implementation of the ConnectionPool interface, I have made a number of assumptions as to the desired behaviour behind that interface.  As these assumptions have shaped my implementation, I am providing them here to facilitate the evaluation of my work.
 
-- The solution should not rely upon any existing third party connection or object implementations.
-- The solution should allow for the definition of a minimum number of connections to be maintained.
-- The solution should allow for the definition of a maximum number of connections to be maintained.
+- The solution should not rely upon any existing third party connection or object pool implementations.
+- The solution should provide an option to bound the minimum and maximum number of connections to be maintained by the connection pool.
 - The solution should not allow consumers to physically close connections.
-- The solution should not allow consumers to retain unused connections indefinitely.
+- The solution should provide an option recover idle connections.
 - The solution should ensure that connections are valid prior to providing them to consumers.
+- The solution should attempt to replace invalid connections with valid connections.
 
 ## Modifications
 
 The following modifications have been made to the existing files:
 
-pom.xml - Added a version element for the maven-compiler-plugin to remove maven warnings. 
-README.md - Added solution specific information.
+- pom.xml - Added a version element for the maven-compiler-plugin to remove maven warnings. 
+- README.md - Added solution specific information.
 
 ## Additions
 
