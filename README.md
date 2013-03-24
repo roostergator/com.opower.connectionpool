@@ -9,7 +9,7 @@ As the only requirement explicitly defined within the homework assignment is the
 - The solution should not rely upon any existing third party connection or object pool implementations.
 - The solution should provide an option to bound the minimum and maximum number of connections to be maintained by the connection pool.
 - The solution should not allow consumers to physically close connections.
-- The solution should provide an option recover idle connections.
+- The solution should provide an option to recover idle connections.
 - The solution should ensure that connections are valid prior to providing them to consumers.
 - The solution should attempt to replace invalid connections with valid connections.
 
@@ -24,8 +24,8 @@ The following modifications have been made to the existing files:
 
 The following additions have been made:
 
-.gitignore - Added to the project to prevent the inclusion of platform, environment and build files.
-/src/main/java/com/opower/connectionpool/ConnectionPoolImpl.java - Contains all implementation specific code and classes.
+- .gitignore - Added to the project to prevent the inclusion of platform, environment and build files.
+- /src/main/java/com/opower/connectionpool/ConnectionPoolImpl.java - Contains all implementation specific code and classes.
 
 ## Instructions
 
