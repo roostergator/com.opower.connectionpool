@@ -3,7 +3,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 /**
- * TODO: Put instructions here (if any)
+ * TODO: See the documentation in the README.md file and Javadocs for ConnectionPoolImpl.
  */
 public interface ConnectionPool {
 
